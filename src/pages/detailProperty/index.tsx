@@ -43,7 +43,7 @@ const DetailProperty = () => {
       navigate("/");
       return;
     }
-
+    
     const docRef = doc(db, "properties", id);
     await getDoc(docRef).then((snapshot) => {
       if (!snapshot.data()) {
@@ -56,8 +56,6 @@ const DetailProperty = () => {
         id, title, bedroom, suits, bathroom, parking, buildingArea, totalArea, whatsapp, city, recreation, description, images, created, uidOwner, price, modality
       });
     });
-
-    loadProperty();
   }
 
   useEffect(() => {
@@ -84,8 +82,6 @@ const DetailProperty = () => {
         } else {
           setProperties(reorderListProperties[0]);
         }
-
-
       })
 
     }
