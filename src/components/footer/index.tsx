@@ -1,8 +1,11 @@
+import { useContext } from "react"
 import { FaFacebookSquare, FaInstagramSquare, FaPinterestSquare, FaTwitterSquare, FaYoutubeSquare } from "react-icons/fa"
 import { Link } from "react-router-dom"
+import { AuthContext } from "../../contexts/AuthContext"
 
 
 export const Footer = () => {
+      const { signed } = useContext(AuthContext);
       return (
             <footer>
                   <div className="flex items-center justify-center py-12 bg-color1">
@@ -10,17 +13,25 @@ export const Footer = () => {
                               <div>
                                     <h3 className="font-bold mb-3 after:w-10 after:h-1 after:bg-color2">Imóveis</h3>
                                     <ul>
-                                          <li><a href="">Venda</a></li>
-                                          <li><a href="">Alugue</a></li>
-                                          <li><a href="">Lançamentos</a></li>
+                                          <li><Link to="/modalidade/venda">Venda</Link></li>
+                                          <li><Link to="/modalidade/locacao">Locação</Link></li>
                                     </ul>
                               </div>
                               <div>
                                     <h3 className="font-bold mb-3">Anunciante</h3>
-                                    <ul>
-                                          <li><a href="">Entrar</a></li>
-                                          <li><a href="">Criar conta</a></li>
-                                    </ul>
+                                    {
+                                          signed ? (
+                                                <ul>
+                                                      <li><Link to="/dashboard/novo">Anunciar</Link></li>
+                                                      <li><Link to="/dashboard">Dashboard</Link></li>
+                                                </ul>
+                                          ) : (
+                                                <ul>
+                                                      <li><Link to="/login">Entrar</Link></li>
+                                                      <li><Link to="/registrar">Criar conta</Link></li>
+                                                </ul>
+                                          )
+                                    }
                               </div>
                               <div>
                                     <h3 className="font-bold mb-3">Redes sociais</h3>

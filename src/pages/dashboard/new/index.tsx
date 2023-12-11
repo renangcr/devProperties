@@ -274,8 +274,8 @@ export const New = () => {
             <div className="w-full">
               <p className="mb-2 font-medium">Modalidade</p>
               <select {...register("modality")} name="modality" className='w-full border-2 rounded h-11 px-2'>
-                <option value="Venda">Venda</option>
-                <option value="Locação">Locação</option>
+                <option value="venda">Venda</option>
+                <option value="locacao">Locação</option>
               </select>
             </div>
           </div>

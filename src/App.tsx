@@ -9,6 +9,7 @@ import { Dashboard } from './pages/dashboard';
 import { New } from './pages/dashboard/new';
 import { Private } from './routes/Private';
 import { Search } from './pages/search';
+import { Modality } from './pages/modality';
 
 export const router = createBrowserRouter([
   {
@@ -25,6 +26,10 @@ export const router = createBrowserRouter([
       {
         path: "/busca/:search",
         element: <Search/>
+      },
+      {
+        path: "/modalidade/:modality",
+        element: <Modality />
       },
       {
         path: "/dashboard",
